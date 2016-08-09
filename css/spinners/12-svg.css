@@ -1,0 +1,80 @@
+body {
+  overflow: hidden;
+  background: #000;
+}
+
+#logo {
+  width: 40px;
+  height: 40px;
+  margin: 40px 20px;
+  display: block;
+  fill: #aa7f3d;
+  fill: url("#MyGradient");
+  stroke: #EEBE7B;
+  stroke-miterlimit: 5;
+}
+
+#logo-color-1 {
+  fill: #EA4335;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration: 1;
+  animation-name: FillIn;
+  animation-duration: 4s, 1s, 1s;
+  animation-delay: 0, 3.5s, 3.5s;
+}
+
+#logo-color-2 {
+  fill: #FBBC05;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration: 1;
+  animation-name: FillIn;
+  animation-duration: 4s, 1s, 1s;
+  animation-delay: 0, 3.5s, 3.5s;
+}
+
+#logo-color-3 {
+  fill: #4285F4;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration: 1;
+  animation-name: FillIn;
+  animation-duration: 4s, 1s, 1s;
+  animation-delay: 0, 3.5s, 3.5s;
+}
+
+#logo-color-4 {
+  fill: #34A853;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration: 1;
+  animation-name: FillIn;
+  animation-duration: 4s, 1s, 1s;
+  animation-delay: 0, 3.5s, 3.5s;
+}
+
+@keyframes DrawLine {
+  to {
+    stroke-dashOffset: 0;
+  }
+}
+
+@keyframes FadeStroke {
+  to {
+    stroke-opacity: 0;
+  }
+}
+
+@keyframes FillIn {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
+  }
+}

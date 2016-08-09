@@ -1,0 +1,38 @@
+/*
+ *  Usage:
+ *
+      <div class="double-bounce">
+        <div class="child double-bounce1"></div>
+        <div class="child double-bounce2"></div>
+      </div>
+ *
+ */
+@import "../variables";
+
+.double-bounce {
+  width: $spinners-size;
+  height: $spinners-size;
+  position: relative;
+  margin: $spinners-spinner-margin;
+
+  .child {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: $spinners-spinner-color;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: doubleBounce 2.0s infinite ease-in-out;
+  }
+
+  .double-bounce2 {
+    animation-delay: -1.0s;
+  }
+}
+
+@keyframes doubleBounce {
+  0%, 100% { transform: scale(0) }
+  50% { transform: scale(1.0) }
+}

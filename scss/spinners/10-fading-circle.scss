@@ -1,0 +1,63 @@
+/*
+ *  Usage:
+ *
+      <div class="fading-circle">
+        <div class="circle1 circle"></div>
+        <div class="circle2 circle"></div>
+        <div class="circle3 circle"></div>
+        <div class="circle4 circle"></div>
+        <div class="circle5 circle"></div>
+        <div class="circle6 circle"></div>
+        <div class="circle7 circle"></div>
+        <div class="circle8 circle"></div>
+        <div class="circle9 circle"></div>
+        <div class="circle10 circle"></div>
+        <div class="circle11 circle"></div>
+        <div class="circle12 circle"></div>
+      </div>
+ *
+ */
+@import "../variables";
+
+.fading-circle {
+  $circleCount: 12;
+  $animationDuration: 1.2s;
+
+  margin: $spinners-spinner-margin;
+  width: $spinners-size;
+  height: $spinners-size;
+  position: relative;
+
+  .circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .circle:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 15%;
+    height: 15%;
+    background-color: $spinners-spinner-color;
+    border-radius: 100%;
+    animation: circleFadeDelay $animationDuration infinite ease-in-out both;
+  }
+
+  @for $i from 2 through $circleCount {
+    .circle#{$i} { transform: rotate(360deg / $circleCount * ($i - 1)); }
+  }
+
+  @for $i from 2 through $circleCount {
+    .circle#{$i}:before { animation-delay: - $animationDuration + $animationDuration / $circleCount * ($i - 1); }
+  }
+
+}
+
+@keyframes circleFadeDelay {
+  0%, 39%, 100% { opacity: 0 }
+  40% { opacity: 1 }
+}

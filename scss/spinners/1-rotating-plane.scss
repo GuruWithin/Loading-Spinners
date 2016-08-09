@@ -1,0 +1,25 @@
+/*
+ *  Usage:
+ *
+      <div class="rotating-plane"></div>
+ *
+ */
+@import "../variables";
+
+.rotating-plane {
+  width: $spinners-size;
+  height: $spinners-size;
+  background-color: $spinners-spinner-color;
+  margin: $spinners-spinner-margin;
+  animation: rotatePlane 1.2s infinite ease-in-out;
+}
+
+@keyframes rotatePlane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  } 50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  } 100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}

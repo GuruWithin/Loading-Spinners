@@ -1,0 +1,25 @@
+/*
+ *  Usage:
+ *
+      <div class="spinner spinner-pulse"></div>
+ *
+ */
+@import "../variables";
+
+.spinner-pulse {
+  width: $spinners-size;
+  height: $spinners-size;
+  margin: $spinners-spinner-margin;
+  background-color: $spinners-spinner-color;
+  border-radius: 100%;
+  animation: pulseScaleOut 1.0s infinite ease-in-out;
+}
+
+@keyframes pulseScaleOut {
+  0% {
+    transform: scale(0);
+  } 100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
